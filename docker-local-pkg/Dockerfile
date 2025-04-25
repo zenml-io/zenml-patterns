@@ -20,6 +20,7 @@ RUN rm pyproject.toml README.md
 
 # Remove /app/code directory to avoid clashes during code download in the step entrypoint
 RUN rm /app/code/src/demo/__init__.py
+RUN rm -rf /app/code
 
 # reset the working directory
 WORKDIR /app
