@@ -1,0 +1,8 @@
+.venv
+.zen
+.git
+.gitignore
+.DS_Store
+.idea
+.pytest_cache
+src/demo
