@@ -5,15 +5,16 @@ from zenml.config import DockerSettings
 from demo.steps.training_step import train
 
 @pipeline(
-        enable_cache=False,
-        settings = {"docker": DockerSettings(
+    enable_cache=False,
+    settings = {"docker": 
+        DockerSettings(
             dockerfile="Dockerfile", 
             build_context_root=".",
-            build_config={"build_options": {"platform": "linux/amd64"}},
+            # build_config={"build_options": {"platform": "linux/amd64"}}, # If you are 
             python_package_installer="uv",
-            # prevent_build_reuse=True
-            )
-        }
+            prevent_build_reuse=True
+        )
+    }
 )
 def training_pipeline() -> None:
     train() 
