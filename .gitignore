@@ -1,5 +1,5 @@
 .venv/*
-.zen/*
+*/.zen/*
 uv.lock
 __pycache__/*
 *.pyc
