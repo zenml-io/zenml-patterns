@@ -26,25 +26,29 @@ The solution works by:
 
 ## Setup
 ```sh
-uv sync --dev # needed once
-uv run zenml init # needed once
-uv run zenml login # needed once
-uv run zenml project set default # needed once
+uv sync --dev
+uv run zenml init
+uv run zenml login
+uv run zenml project set default
 ```
 
 ## Running Pipelines
 
 ### Local Execution
 ```sh
-uv run zenml stack set default # run on default local stack
+uv run zenml stack set default
 uv run training-pipeline
 ```
 
 This will run the pipeline defined in `src/demo/pipelines/training_pipeline.py` using your local environment with the demo package installed in editable mode.
 
 ### Remote Execution
+
+In this case we will run on GCP but this will also work for other remote orchestrators.
+
 ```sh
-uv run zenml stack set <...> # Set some stack with a docker based orchestrator
+uv run zenml stack set <...> 
+uv run zenml integration install gcp
 uv run training-pipeline
 ```
 
